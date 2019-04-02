@@ -1,0 +1,5 @@
+E:\GT\DA.CN\Project\MultiChat\Server\bin\Debug\Server.exe.config
+E:\GT\DA.CN\Project\MultiChat\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+E:\GT\DA.CN\Project\MultiChat\Server\obj\Debug\Server.Server.resources
+E:\GT\DA.CN\Project\MultiChat\Server\obj\Debug\Server.Properties.Resources.resources
+E:\GT\DA.CN\Project\MultiChat\Server\obj\Debug\Server.csproj.GenerateResource.Cache

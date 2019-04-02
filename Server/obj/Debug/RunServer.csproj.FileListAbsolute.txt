@@ -1,0 +1,130 @@
+E:\GT\DA.CN\Project\MultiChat\Server\obj\Debug\Server.Server.resources
+E:\GT\DA.CN\Project\MultiChat\Server\obj\Debug\Server.Properties.Resources.resources
+E:\GT\DA.CN\Project\MultiChat\Server\obj\Debug\RunServer.csproj.GenerateResource.Cache
+E:\GT\DA.CN\Project\MultiChat\Server\bin\Debug\Server.exe.config
+E:\GT\DA.CN\Project\MultiChat\Server\bin\Debug\Server.exe
+E:\GT\DA.CN\Project\MultiChat\Server\bin\Debug\Server.pdb
+E:\GT\DA.CN\Project\MultiChat\Server\obj\Debug\Server.exe
+E:\GT\DA.CN\Project\MultiChat\Server\obj\Debug\Server.pdb
+C:\Users\Ngon Nguyen\Desktop\ĐỒ ÁN\MultiChat\Server\bin\Debug\Server.exe.config
+C:\Users\Ngon Nguyen\Desktop\ĐỒ ÁN\MultiChat\Server\obj\Debug\Server.exe
+C:\Users\Ngon Nguyen\Desktop\ĐỒ ÁN\MultiChat\Server\obj\Debug\Server.pdb
+C:\Users\Ngon Nguyen\Desktop\ĐỒ ÁN\MultiChat\Server\bin\Debug\Server.exe
+C:\Users\Ngon Nguyen\Desktop\ĐỒ ÁN\MultiChat\Server\bin\Debug\Server.pdb
+C:\Users\Ngon Nguyen\Desktop\ĐỒ ÁN\MultiChat\Server\obj\Debug\Server.Server.resources
+C:\Users\Ngon Nguyen\Desktop\ĐỒ ÁN\MultiChat\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Ngon Nguyen\Desktop\ĐỒ ÁN\MultiChat\Server\obj\Debug\RunServer.csproj.GenerateResource.Cache
+C:\Users\Ngon Nguyen\Desktop\ĐỒ ÁN\MultiChat\Server\obj\Debug\RunServer.csprojResolveAssemblyReference.cache
+E:\GT\DA.CN\test\MultiChat2\MultiChat\Server\bin\Debug\Server.exe.config
+E:\GT\DA.CN\test\MultiChat2\MultiChat\Server\obj\Debug\Server.exe
+E:\GT\DA.CN\test\MultiChat2\MultiChat\Server\obj\Debug\Server.pdb
+E:\GT\DA.CN\test\MultiChat2\MultiChat\Server\bin\Debug\Server.exe
+E:\GT\DA.CN\test\MultiChat2\MultiChat\Server\bin\Debug\Server.pdb
+E:\GT\DA.CN\test\MultiChat2\MultiChat\Server\obj\Debug\Server.Server.resources
+E:\GT\DA.CN\test\MultiChat2\MultiChat\Server\obj\Debug\Server.Properties.Resources.resources
+E:\GT\DA.CN\test\MultiChat2\MultiChat\Server\obj\Debug\RunServer.csproj.GenerateResource.Cache
+E:\GT\DA.CN\test\MultiChat2\MultiChat\Server\obj\Debug\RunServer.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Final\Final\Server\bin\Debug\Server.exe.config
+C:\Users\Administrator\Desktop\Final\Final\Server\bin\Debug\Server.exe
+C:\Users\Administrator\Desktop\Final\Final\Server\bin\Debug\Server.pdb
+C:\Users\Administrator\Desktop\Final\Final\Server\obj\Debug\RunServer.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Final\Final\Server\obj\Debug\Server.Server.resources
+C:\Users\Administrator\Desktop\Final\Final\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Administrator\Desktop\Final\Final\Server\obj\Debug\RunServer.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\Final\Final\Server\obj\Debug\Server.exe
+C:\Users\Administrator\Desktop\Final\Final\Server\obj\Debug\Server.pdb
+E:\GT\DA.CN\test\Final (1)\Final\Server\bin\Debug\Server.exe.config
+E:\GT\DA.CN\test\Final (1)\Final\Server\obj\Debug\Server.exe
+E:\GT\DA.CN\test\Final (1)\Final\Server\obj\Debug\Server.pdb
+E:\GT\DA.CN\test\Final (1)\Final\Server\bin\Debug\Server.exe
+E:\GT\DA.CN\test\Final (1)\Final\Server\bin\Debug\Server.pdb
+E:\GT\DA.CN\test\Final (1)\Final\Server\obj\Debug\Server.Server.resources
+E:\GT\DA.CN\test\Final (1)\Final\Server\obj\Debug\Server.Properties.Resources.resources
+E:\GT\DA.CN\test\Final (1)\Final\Server\obj\Debug\RunServer.csproj.GenerateResource.Cache
+C:\Users\Ngon Nguyen\Desktop\Final\Server\bin\Debug\Server.exe.config
+C:\Users\Ngon Nguyen\Desktop\Final\Server\obj\Debug\Server.exe
+C:\Users\Ngon Nguyen\Desktop\Final\Server\obj\Debug\Server.pdb
+C:\Users\Ngon Nguyen\Desktop\Final\Server\bin\Debug\Server.exe
+C:\Users\Ngon Nguyen\Desktop\Final\Server\bin\Debug\Server.pdb
+C:\Users\Ngon Nguyen\Desktop\Final\Server\obj\Debug\RunServer.csprojResolveAssemblyReference.cache
+C:\Users\Ngon Nguyen\Desktop\Final\Server\obj\Debug\Server.Server.resources
+C:\Users\Ngon Nguyen\Desktop\Final\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Ngon Nguyen\Desktop\Final\Server\obj\Debug\RunServer.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\FinalNgon\Final\Server\obj\Debug\RunServer.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\FinalNgon\Final\Server\obj\Debug\Server.Server.resources
+C:\Users\Administrator\Desktop\FinalNgon\Final\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Administrator\Desktop\FinalNgon\Final\Server\obj\Debug\RunServer.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\FinalNgon\Final\Server\obj\Debug\Server.exe
+C:\Users\Administrator\Desktop\FinalNgon\Final\Server\bin\Debug\Server.exe.config
+C:\Users\Administrator\Desktop\FinalNgon\Final\Server\bin\Debug\Server.exe
+C:\Users\Administrator\Desktop\FinalNgon\Final\Server\bin\Debug\Server.pdb
+C:\Users\Administrator\Desktop\FinalNgon\Final\Server\obj\Debug\Server.pdb
+C:\Users\Administrator\Desktop\FinalNgon\FinalNgon\Final\Server\obj\Debug\RunServer.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\FinalNgon\FinalNgon\Final\Server\obj\Debug\Server.Server.resources
+C:\Users\Administrator\Desktop\FinalNgon\FinalNgon\Final\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Administrator\Desktop\FinalNgon\FinalNgon\Final\Server\obj\Debug\RunServer.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\FinalNgon\FinalNgon\Final\Server\obj\Debug\Server.exe
+C:\Users\Administrator\Desktop\FinalNgon\FinalNgon\Final\Server\bin\Debug\Server.exe.config
+C:\Users\Administrator\Desktop\FinalNgon\FinalNgon\Final\Server\bin\Debug\Server.exe
+C:\Users\Administrator\Desktop\FinalNgon\FinalNgon\Final\Server\bin\Debug\Server.pdb
+C:\Users\Administrator\Desktop\FinalNgon\FinalNgon\Final\Server\obj\Debug\Server.pdb
+C:\Users\Ngon Nguyen\Desktop\16\FinalNgon\FinalNgon\Final\Server\bin\Debug\Server.exe.config
+C:\Users\Ngon Nguyen\Desktop\16\FinalNgon\FinalNgon\Final\Server\obj\Debug\Server.exe
+C:\Users\Ngon Nguyen\Desktop\16\FinalNgon\FinalNgon\Final\Server\obj\Debug\Server.pdb
+C:\Users\Ngon Nguyen\Desktop\16\FinalNgon\FinalNgon\Final\Server\bin\Debug\Server.exe
+C:\Users\Ngon Nguyen\Desktop\16\FinalNgon\FinalNgon\Final\Server\bin\Debug\Server.pdb
+C:\Users\Ngon Nguyen\Desktop\16\FinalNgon\FinalNgon\Final\Server\obj\Debug\RunServer.csprojResolveAssemblyReference.cache
+C:\Users\Ngon Nguyen\Desktop\16\FinalNgon\FinalNgon\Final\Server\obj\Debug\Server.Server.resources
+C:\Users\Ngon Nguyen\Desktop\16\FinalNgon\FinalNgon\Final\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Ngon Nguyen\Desktop\16\FinalNgon\FinalNgon\Final\Server\obj\Debug\RunServer.csproj.GenerateResource.Cache
+C:\Users\Ngon Nguyen\Desktop\ĐATN\FinalNgon\FinalNgon\Final\Server\bin\Debug\Server.exe.config
+C:\Users\Ngon Nguyen\Desktop\ĐATN\FinalNgon\FinalNgon\Final\Server\obj\Debug\Server.exe
+C:\Users\Ngon Nguyen\Desktop\ĐATN\FinalNgon\FinalNgon\Final\Server\obj\Debug\Server.pdb
+C:\Users\Ngon Nguyen\Desktop\ĐATN\FinalNgon\FinalNgon\Final\Server\bin\Debug\Server.exe
+C:\Users\Ngon Nguyen\Desktop\ĐATN\FinalNgon\FinalNgon\Final\Server\bin\Debug\Server.pdb
+C:\Users\Ngon Nguyen\Desktop\ĐATN\FinalNgon\FinalNgon\Final\Server\obj\Debug\RunServer.csprojResolveAssemblyReference.cache
+C:\Users\Ngon Nguyen\Desktop\ĐATN\FinalNgon\FinalNgon\Final\Server\obj\Debug\Server.Server.resources
+C:\Users\Ngon Nguyen\Desktop\ĐATN\FinalNgon\FinalNgon\Final\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Ngon Nguyen\Desktop\ĐATN\FinalNgon\FinalNgon\Final\Server\obj\Debug\RunServer.csproj.GenerateResource.Cache
+C:\Users\Asus\Desktop\CHUONGTRINHMAYTINH\Server\obj\Debug\RunServer.csprojAssemblyReference.cache
+C:\Users\Asus\Desktop\CHUONGTRINHMAYTINH\Server\obj\Debug\Server.exe
+C:\Users\Asus\Desktop\CHUONGTRINHMAYTINH\Server\obj\Debug\Server.pdb
+C:\Users\Asus\Desktop\CHUONGTRINHMAYTINH\Server\bin\Debug\Server.exe.config
+C:\Users\Asus\Desktop\CHUONGTRINHMAYTINH\Server\bin\Debug\Server.exe
+C:\Users\Asus\Desktop\CHUONGTRINHMAYTINH\Server\bin\Debug\Server.pdb
+C:\Users\Asus\Desktop\CHUONGTRINHMAYTINH\Server\obj\Debug\Server.Server.resources
+C:\Users\Asus\Desktop\CHUONGTRINHMAYTINH\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Asus\Desktop\CHUONGTRINHMAYTINH\Server\obj\Debug\RunServer.csproj.GenerateResource.cache
+C:\Users\Asus\Desktop\CHUONGTRINHMAYTINH\Server\obj\Debug\RunServer.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\BackUpFile\Server\bin\Debug\Server.exe.config
+C:\Users\Asus\Desktop\BackUpFile\Server\bin\Debug\Server.exe
+C:\Users\Asus\Desktop\BackUpFile\Server\bin\Debug\Server.pdb
+C:\Users\Asus\Desktop\BackUpFile\Server\obj\Debug\RunServer.csprojAssemblyReference.cache
+C:\Users\Asus\Desktop\BackUpFile\Server\obj\Debug\Server.Server.resources
+C:\Users\Asus\Desktop\BackUpFile\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Asus\Desktop\BackUpFile\Server\obj\Debug\RunServer.csproj.GenerateResource.cache
+C:\Users\Asus\Desktop\BackUpFile\Server\obj\Debug\RunServer.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\BackUpFile\Server\obj\Debug\Server.exe
+C:\Users\Asus\Desktop\BackUpFile\Server\obj\Debug\Server.pdb
+C:\Users\Asus\Desktop\BackUpFile - Copy\Server\bin\Debug\Server.exe.config
+C:\Users\Asus\Desktop\BackUpFile - Copy\Server\bin\Debug\Server.exe
+C:\Users\Asus\Desktop\BackUpFile - Copy\Server\bin\Debug\Server.pdb
+C:\Users\Asus\Desktop\BackUpFile - Copy\Server\obj\Debug\RunServer.csprojAssemblyReference.cache
+C:\Users\Asus\Desktop\BackUpFile - Copy\Server\obj\Debug\Server.Password.resources
+C:\Users\Asus\Desktop\BackUpFile - Copy\Server\obj\Debug\Server.Server.resources
+C:\Users\Asus\Desktop\BackUpFile - Copy\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Asus\Desktop\BackUpFile - Copy\Server\obj\Debug\RunServer.csproj.GenerateResource.cache
+C:\Users\Asus\Desktop\BackUpFile - Copy\Server\obj\Debug\RunServer.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\BackUpFile - Copy\Server\obj\Debug\Server.exe
+C:\Users\Asus\Desktop\BackUpFile - Copy\Server\obj\Debug\Server.pdb
+C:\Users\USER\Desktop\BackUpFile _Final\Server\bin\Debug\Server.exe.config
+C:\Users\USER\Desktop\BackUpFile _Final\Server\bin\Debug\Server.exe
+C:\Users\USER\Desktop\BackUpFile _Final\Server\bin\Debug\Server.pdb
+C:\Users\USER\Desktop\BackUpFile _Final\Server\obj\Debug\Server.Password.resources
+C:\Users\USER\Desktop\BackUpFile _Final\Server\obj\Debug\Server.Server.resources
+C:\Users\USER\Desktop\BackUpFile _Final\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\USER\Desktop\BackUpFile _Final\Server\obj\Debug\RunServer.csproj.GenerateResource.cache
+C:\Users\USER\Desktop\BackUpFile _Final\Server\obj\Debug\RunServer.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\BackUpFile _Final\Server\obj\Debug\Server.exe
+C:\Users\USER\Desktop\BackUpFile _Final\Server\obj\Debug\Server.pdb
+C:\Users\USER\Desktop\BackUpFile _Final\Server\obj\Debug\RunServer.csprojAssemblyReference.cache

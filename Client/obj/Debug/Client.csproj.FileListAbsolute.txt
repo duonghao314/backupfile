@@ -1,0 +1,127 @@
+E:\GT\DA.CN\Project\MultiChat\Client\obj\Debug\Client.Client.resources
+E:\GT\DA.CN\Project\MultiChat\Client\obj\Debug\Client.Properties.Resources.resources
+E:\GT\DA.CN\Project\MultiChat\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+E:\GT\DA.CN\Project\MultiChat\Client\bin\Debug\Client.exe.config
+E:\GT\DA.CN\Project\MultiChat\Client\bin\Debug\Client.exe
+E:\GT\DA.CN\Project\MultiChat\Client\bin\Debug\Client.pdb
+E:\GT\DA.CN\Project\MultiChat\Client\obj\Debug\Client.exe
+E:\GT\DA.CN\Project\MultiChat\Client\obj\Debug\Client.pdb
+E:\GT\DA.CN\Project\MultiChat\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\Ngon Nguyen\Desktop\ĐỒ ÁN\MultiChat\Client\bin\Debug\Client.exe.config
+C:\Users\Ngon Nguyen\Desktop\ĐỒ ÁN\MultiChat\Client\obj\Debug\Client.exe
+C:\Users\Ngon Nguyen\Desktop\ĐỒ ÁN\MultiChat\Client\obj\Debug\Client.pdb
+C:\Users\Ngon Nguyen\Desktop\ĐỒ ÁN\MultiChat\Client\bin\Debug\Client.exe
+C:\Users\Ngon Nguyen\Desktop\ĐỒ ÁN\MultiChat\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\Ngon Nguyen\Desktop\ĐỒ ÁN\MultiChat\Client\obj\Debug\Client.Client.resources
+C:\Users\Ngon Nguyen\Desktop\ĐỒ ÁN\MultiChat\Client\obj\Debug\Client.Properties.Resources.resources
+C:\Users\Ngon Nguyen\Desktop\ĐỒ ÁN\MultiChat\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+C:\Users\Ngon Nguyen\Desktop\ĐỒ ÁN\MultiChat\Client\bin\Debug\Client.pdb
+E:\GT\DA.CN\test\MultiChat2\MultiChat\Client\bin\Debug\Client.exe.config
+E:\GT\DA.CN\test\MultiChat2\MultiChat\Client\obj\Debug\Client.exe
+E:\GT\DA.CN\test\MultiChat2\MultiChat\Client\obj\Debug\Client.pdb
+E:\GT\DA.CN\test\MultiChat2\MultiChat\Client\bin\Debug\Client.exe
+E:\GT\DA.CN\test\MultiChat2\MultiChat\Client\bin\Debug\Client.pdb
+E:\GT\DA.CN\test\MultiChat2\MultiChat\Client\obj\Debug\Client.Client.resources
+E:\GT\DA.CN\test\MultiChat2\MultiChat\Client\obj\Debug\Client.Properties.Resources.resources
+E:\GT\DA.CN\test\MultiChat2\MultiChat\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+E:\GT\DA.CN\test\MultiChat2\MultiChat\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Final\Final\Client\bin\Debug\Client.exe.config
+C:\Users\Administrator\Desktop\Final\Final\Client\bin\Debug\Client.exe
+C:\Users\Administrator\Desktop\Final\Final\Client\bin\Debug\Client.pdb
+C:\Users\Administrator\Desktop\Final\Final\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Final\Final\Client\obj\Debug\Client.Client.resources
+C:\Users\Administrator\Desktop\Final\Final\Client\obj\Debug\Client.Properties.Resources.resources
+C:\Users\Administrator\Desktop\Final\Final\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\Final\Final\Client\obj\Debug\Client.exe
+C:\Users\Administrator\Desktop\Final\Final\Client\obj\Debug\Client.pdb
+E:\GT\DA.CN\test\Final (1)\Final\Client\bin\Debug\Client.exe.config
+E:\GT\DA.CN\test\Final (1)\Final\Client\bin\Debug\Client.exe
+E:\GT\DA.CN\test\Final (1)\Final\Client\bin\Debug\Client.pdb
+E:\GT\DA.CN\test\Final (1)\Final\Client\obj\Debug\Client.Client.resources
+E:\GT\DA.CN\test\Final (1)\Final\Client\obj\Debug\Client.Properties.Resources.resources
+E:\GT\DA.CN\test\Final (1)\Final\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+E:\GT\DA.CN\test\Final (1)\Final\Client\obj\Debug\Client.exe
+E:\GT\DA.CN\test\Final (1)\Final\Client\obj\Debug\Client.pdb
+E:\GT\DA.CN\test\Final (1)\Final\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\Ngon Nguyen\Desktop\Final\Client\bin\Debug\Client.exe.config
+C:\Users\Ngon Nguyen\Desktop\Final\Client\obj\Debug\Client.exe
+C:\Users\Ngon Nguyen\Desktop\Final\Client\obj\Debug\Client.pdb
+C:\Users\Ngon Nguyen\Desktop\Final\Client\bin\Debug\Client.exe
+C:\Users\Ngon Nguyen\Desktop\Final\Client\bin\Debug\Client.pdb
+C:\Users\Ngon Nguyen\Desktop\Final\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\Ngon Nguyen\Desktop\Final\Client\obj\Debug\Client.Client.resources
+C:\Users\Ngon Nguyen\Desktop\Final\Client\obj\Debug\Client.Properties.Resources.resources
+C:\Users\Ngon Nguyen\Desktop\Final\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\FinalNgon\Final\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\FinalNgon\Final\Client\obj\Debug\Client.Client.resources
+C:\Users\Administrator\Desktop\FinalNgon\Final\Client\obj\Debug\Client.Properties.Resources.resources
+C:\Users\Administrator\Desktop\FinalNgon\Final\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\FinalNgon\Final\Client\obj\Debug\Client.exe
+C:\Users\Administrator\Desktop\FinalNgon\Final\Client\bin\Debug\Client.exe.config
+C:\Users\Administrator\Desktop\FinalNgon\Final\Client\bin\Debug\Client.exe
+C:\Users\Administrator\Desktop\FinalNgon\Final\Client\bin\Debug\Client.pdb
+C:\Users\Administrator\Desktop\FinalNgon\Final\Client\obj\Debug\Client.pdb
+E:\a (2)\FinalNgon\Final\Client\bin\Debug\Client.exe.config
+E:\a (2)\FinalNgon\Final\Client\bin\Debug\Client.exe
+E:\a (2)\FinalNgon\Final\Client\bin\Debug\Client.pdb
+E:\a (2)\FinalNgon\Final\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+E:\a (2)\FinalNgon\Final\Client\obj\Debug\Client.Client.resources
+E:\a (2)\FinalNgon\Final\Client\obj\Debug\Client.Properties.Resources.resources
+E:\a (2)\FinalNgon\Final\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+E:\a (2)\FinalNgon\Final\Client\obj\Debug\Client.exe
+E:\a (2)\FinalNgon\Final\Client\obj\Debug\Client.pdb
+E:\a (2)\Client\bin\Debug\Client.exe
+E:\a (2)\Client\bin\Debug\Client.pdb
+E:\a (2)\Client\bin\Debug\Client.exe.config
+E:\a (2)\Client\obj\Debug\Client.Client.resources
+E:\a (2)\Client\obj\Debug\Client.Properties.Resources.resources
+E:\a (2)\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+E:\a (2)\Client\obj\Debug\Client.exe
+E:\a (2)\Client\obj\Debug\Client.pdb
+C:\Users\Administrator\Desktop\FinalNgon\FinalNgon\Final\Client\bin\Debug\Client.exe.config
+C:\Users\Administrator\Desktop\FinalNgon\FinalNgon\Final\Client\bin\Debug\Client.exe
+C:\Users\Administrator\Desktop\FinalNgon\FinalNgon\Final\Client\bin\Debug\Client.pdb
+C:\Users\Administrator\Desktop\FinalNgon\FinalNgon\Final\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\FinalNgon\FinalNgon\Final\Client\obj\Debug\Client.Client.resources
+C:\Users\Administrator\Desktop\FinalNgon\FinalNgon\Final\Client\obj\Debug\Client.Properties.Resources.resources
+C:\Users\Administrator\Desktop\FinalNgon\FinalNgon\Final\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\FinalNgon\FinalNgon\Final\Client\obj\Debug\Client.exe
+C:\Users\Administrator\Desktop\FinalNgon\FinalNgon\Final\Client\obj\Debug\Client.pdb
+C:\Users\Ngon Nguyen\Desktop\16\FinalNgon\FinalNgon\Final\Client\bin\Debug\Client.exe.config
+C:\Users\Ngon Nguyen\Desktop\16\FinalNgon\FinalNgon\Final\Client\obj\Debug\Client.exe
+C:\Users\Ngon Nguyen\Desktop\16\FinalNgon\FinalNgon\Final\Client\obj\Debug\Client.pdb
+C:\Users\Ngon Nguyen\Desktop\16\FinalNgon\FinalNgon\Final\Client\bin\Debug\Client.exe
+C:\Users\Ngon Nguyen\Desktop\16\FinalNgon\FinalNgon\Final\Client\bin\Debug\Client.pdb
+C:\Users\Ngon Nguyen\Desktop\16\FinalNgon\FinalNgon\Final\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\Ngon Nguyen\Desktop\16\FinalNgon\FinalNgon\Final\Client\obj\Debug\Client.Client.resources
+C:\Users\Ngon Nguyen\Desktop\16\FinalNgon\FinalNgon\Final\Client\obj\Debug\Client.Properties.Resources.resources
+C:\Users\Ngon Nguyen\Desktop\16\FinalNgon\FinalNgon\Final\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+C:\Users\Ngon Nguyen\Desktop\ĐATN\FinalNgon\FinalNgon\Final\Client\bin\Debug\Client.exe.config
+C:\Users\Ngon Nguyen\Desktop\ĐATN\FinalNgon\FinalNgon\Final\Client\obj\Debug\Client.exe
+C:\Users\Ngon Nguyen\Desktop\ĐATN\FinalNgon\FinalNgon\Final\Client\obj\Debug\Client.pdb
+C:\Users\Ngon Nguyen\Desktop\ĐATN\FinalNgon\FinalNgon\Final\Client\bin\Debug\Client.exe
+C:\Users\Ngon Nguyen\Desktop\ĐATN\FinalNgon\FinalNgon\Final\Client\bin\Debug\Client.pdb
+C:\Users\Ngon Nguyen\Desktop\ĐATN\FinalNgon\FinalNgon\Final\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\Ngon Nguyen\Desktop\ĐATN\FinalNgon\FinalNgon\Final\Client\obj\Debug\Client.Client.resources
+C:\Users\Ngon Nguyen\Desktop\ĐATN\FinalNgon\FinalNgon\Final\Client\obj\Debug\Client.Properties.Resources.resources
+C:\Users\Ngon Nguyen\Desktop\ĐATN\FinalNgon\FinalNgon\Final\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+C:\Users\Asus\Desktop\BackUpFile\Client\bin\Debug\Client.exe.config
+C:\Users\Asus\Desktop\BackUpFile\Client\bin\Debug\Client.exe
+C:\Users\Asus\Desktop\BackUpFile\Client\bin\Debug\Client.pdb
+C:\Users\Asus\Desktop\BackUpFile\Client\obj\Debug\Client.csprojAssemblyReference.cache
+C:\Users\Asus\Desktop\BackUpFile\Client\obj\Debug\Client.Client.resources
+C:\Users\Asus\Desktop\BackUpFile\Client\obj\Debug\Client.Properties.Resources.resources
+C:\Users\Asus\Desktop\BackUpFile\Client\obj\Debug\Client.csproj.GenerateResource.cache
+C:\Users\Asus\Desktop\BackUpFile\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\BackUpFile\Client\obj\Debug\Client.exe
+C:\Users\Asus\Desktop\BackUpFile\Client\obj\Debug\Client.pdb
+C:\Users\USER\Desktop\BackUpFile _Final\Client\bin\Debug\Client.exe.config
+C:\Users\USER\Desktop\BackUpFile _Final\Client\bin\Debug\Client.exe
+C:\Users\USER\Desktop\BackUpFile _Final\Client\bin\Debug\Client.pdb
+C:\Users\USER\Desktop\BackUpFile _Final\Client\obj\Debug\Client.csprojAssemblyReference.cache
+C:\Users\USER\Desktop\BackUpFile _Final\Client\obj\Debug\Client.Client.resources
+C:\Users\USER\Desktop\BackUpFile _Final\Client\obj\Debug\Client.Properties.Resources.resources
+C:\Users\USER\Desktop\BackUpFile _Final\Client\obj\Debug\Client.csproj.GenerateResource.cache
+C:\Users\USER\Desktop\BackUpFile _Final\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\BackUpFile _Final\Client\obj\Debug\Client.exe
+C:\Users\USER\Desktop\BackUpFile _Final\Client\obj\Debug\Client.pdb
