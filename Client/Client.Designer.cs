@@ -60,7 +60,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(241, 55);
             this.button2.TabIndex = 12;
-            this.button2.Text = "Connect";
+            this.button2.Text = "Kết nối";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -77,11 +77,11 @@
             // 
             this.label2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(128, 24);
+            this.label2.Location = new System.Drawing.Point(81, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(396, 30);
+            this.label2.Size = new System.Drawing.Size(443, 30);
             this.label2.TabIndex = 19;
-            this.label2.Text = "BACKUP DATA SYSTEM ";
+            this.label2.Text = "HỆ THỐNG SAO LƯU DỮ LIỆU";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // menuStrip1
@@ -136,7 +136,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 23);
             this.button1.TabIndex = 24;
-            this.button1.Text = "Save file to ...";
+            this.button1.Text = "Lưu file ...";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -146,7 +146,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 25;
-            this.button3.Text = "Clear";
+            this.button3.Text = "Xóa";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 

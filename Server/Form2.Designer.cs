@@ -104,7 +104,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "Password";
-            this.Text = "Password";
+            this.Text = "fed";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Password_FormClosing);
             this.Load += new System.EventHandler(this.Password_Load);
             this.ResumeLayout(false);

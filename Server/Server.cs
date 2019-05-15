@@ -38,22 +38,32 @@ namespace Server
         StreamWriter sw;
         Socket Client;
         Thread t1;
+        string time = "";
+        string cmd = "";
         //Thread t2;
         string myIP = "";
+        DateTime timeAccess = new DateTime(2000, 1, 1, 0, 0, 0);
         Random ran ;
         public static string CMAC= "null";
         string Client_Mac;
         string key;
         string zipA, zipB = "";
+        string zipFile = "";
         string MPort;
-        
+        float sizeMB = 0;
         Boolean backuped = false;
         string inputData = String.Empty;
         delegate void SetTextCallback(string text);
         int AutoCount = 0;
         Boolean clientConnDisplay = false;
         int day2Save = 3;
-        string dir = @"D:\";
+        string dirFolder = @"D:\";
+        string dirOneDrive = "";
+        string dir2SaveOffline = "";
+        string dir2SaveOneDrive = "";
+        string commandFromUser = "";
+        int countFailRequest = 0;
+        Boolean clientConnect = false;
         //string phone = "";
         //int timercount = 30;
         Boolean day2savechange = false;
@@ -76,13 +86,12 @@ namespace Server
 
             Connect();
             label3.Text = "";
-            label7.Text = "Choose backup file";
+            label7.Text = "Chọn thư mục sao lưu";
             label9.Text = "";
-            label12.Text = "Choose folder OneDrive";
+            label12.Text = "Chọn thư mục đồng bộ OneDrive";
             label5.Text = "Username: Guest";
-            label13.Text = "Admin's number: ##########";
-            label8.Text = "Client's MAC:" + CMAC;
-            //label10.Text = "###";
+            label13.Text = "SĐT liên lạc: ##########";
+            label8.Text = "Địa chỉ MAC :" + CMAC;
         }
         private void Radio_show_CheckedChanged(object sender, EventArgs e)
         {
@@ -97,9 +106,12 @@ namespace Server
                         {
                             timer2.Start();
                         }
-                        
+
                         //MessageBox.Show("Thiết lập auto backup mỗi 30 phút");
-                        textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + "   Thay đổi chu kỳ backup thành 30 phút");
+                        time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                        cmd = "   Thay đổi chu kỳ sao lưu thành 30 phút";
+                        textBox1.AppendText(time + cmd);
+                        sendData(time, cmd);
                         textBox1.AppendText(Environment.NewLine);
                         break;
                     case "radioButton2":
@@ -109,7 +121,11 @@ namespace Server
                             timer2.Start();
                         }
                         //MessageBox.Show("Thiết lập auto backup mỗi 1 giờ");
-                        textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + "   Thay đổi chu kỳ backup thành 1 giờ");
+                        time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                        cmd = "   Thay đổi chu kỳ sao lưu thành 1 giờ";
+                        textBox1.AppendText(time + cmd);
+                        sendData(time, cmd);
+                        //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "   Thay đổi chu kỳ backup thành 1 giờ");
                         textBox1.AppendText(Environment.NewLine);
                         break;
                     case "radioButton3":
@@ -119,7 +135,11 @@ namespace Server
                             timer2.Start();
                         }
                         //MessageBox.Show("Thiết lập auto backup mỗi 2 giờ");
-                        textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + "   Thay đổi chu kỳ backup thành 2 giờ");
+                        time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                        cmd = "   Thay đổi chu kỳ sao lưu thành 2 giờ";
+                        textBox1.AppendText(time + cmd);
+                        sendData(time, cmd);
+                        //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "   Thay đổi chu kỳ backup thành 2 giờ");
                         textBox1.AppendText(Environment.NewLine);
                         break;
                 }
@@ -139,13 +159,22 @@ namespace Server
         {
             FolderBrowserDialog path = new FolderBrowserDialog();
             path.ShowNewFolderButton = false;
-            path.Description = "Mời chọn thư mục để backup";
+            path.Description = "Mời chọn thư mục để sao lưu";
             if (path.ShowDialog() == DialogResult.OK)
             {
                 label7.Text = path.SelectedPath;
+                dirFolder = label7.Text;
             }
-            textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + "   Chọn <" + label7.Text + "> làm thư mục chính");
+            time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            cmd = "   Chọn <" + label7.Text + "> làm thư mục sao lưu";
+            textBox1.AppendText(time + cmd);
+            //sendData(time, cmd);
+            //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "   Chọn <" + label7.Text + "> làm thư mục chính");
             textBox1.AppendText(Environment.NewLine);
+            button4.Visible = false;
+            button5.Visible = true;
+            label7.Visible = false;
+            label14.Visible = true;
         }
 
         void Connect()
@@ -209,7 +238,31 @@ namespace Server
 
             return formatter.Deserialize(stream);
         }
-
+        public int sendData(string time,string log)
+        {
+            int count = 0;
+            while (true)
+            {
+                if(count > 5)
+                {
+                    return 1;
+                }
+                try
+                {
+                    string commandLink = "http://vvtsmart.com/backup/updateLog.php?time=" + time+"&log="+log;
+                    WebClient client = new WebClient();
+                    String downloadedString = client.DownloadString(commandLink);
+                    if (downloadedString == "Successful!!!")
+                    {
+                        return 0;
+                    }
+                }
+                catch
+                {
+                    count += 1;
+                }
+            }
+        }
         public string Check_Mac()
         {
             if (string.Compare(CMAC, Client_Mac, true) == 0)
@@ -231,9 +284,17 @@ namespace Server
             if (Password.stt) {
                 username = Password.username;
                 CMAC = textBox2.Text.Trim();
-                textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + "   " + username.ToUpper() + " đã đăng nhập");
+                time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                cmd =  "   " + username.ToUpper() + " đã đăng nhập";
+                textBox1.AppendText(time+cmd);
+                sendData(time,cmd);
                 textBox1.AppendText(Environment.NewLine);
-                textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + "   Địa chỉ MAC client: " + CMAC);
+
+                time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                cmd = "   Địa chỉ MAC client: " + CMAC;
+                textBox1.AppendText(time + cmd);
+                sendData(time, cmd);
+                //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "   Địa chỉ MAC client: " + CMAC);
                 textBox1.AppendText(Environment.NewLine);
             }
             
@@ -280,7 +341,7 @@ namespace Server
         {
             if (day2Save != 0)
             {
-                string[] fileEntries = Directory.GetFiles(dir);
+                string[] fileEntries = Directory.GetFiles(dirFolder);
                 //string[] backupFiles = null;
 
                 DateTime dateNow = DateTime.Now;
@@ -299,21 +360,28 @@ namespace Server
                         if (dayCount > day2Save)
                         {
                             File.Delete(fileName);
+                            time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                            cmd = "   Xóa file:" + fileName;
+                            textBox1.AppendText(time + cmd);
+                            sendData(time, cmd);
+                            textBox1.AppendText(Environment.NewLine);
                         }
                     }
                 }
             }
         }
+       
         void Main_Process()
         {
-            label1.Text = "Server send file: ";
-            string line_A = label7.Text;
-            string line_B = label9.Text;
+            sendToOneDriveFolder();
+            label1.Text = "Gửi file: ";
+            string line_to_file = label7.Text;
+            
 
             string filepath = label7.Text + "\\log.txt";
             FileStream fs = new FileStream(filepath, FileMode.Create);
             StreamWriter sWriter = new StreamWriter(fs, Encoding.UTF8);
-            string[] folder = System.IO.Directory.GetFiles(line_A);
+            string[] folder = System.IO.Directory.GetFiles(line_to_file);
             DayOfWeek dayweek = DateTime.Now.DayOfWeek;
             int day = DateTime.Now.Day;
             string sDay = day.ToString();
@@ -344,9 +412,67 @@ namespace Server
             sWriter.Flush();
             fs.Close();
 
-            zipA = dir+ "\\backup_" + sDay + "" + sMonth + "" + year + "_" + hour + "h" + minute + "m" + second + "s" + ".zip";
-           
-            ZipFile.CreateFromDirectory(line_A, zipA);
+            List<String> fileChanged = new List<string>();
+
+            int index = 0;
+            
+            foreach (string file in folder)
+            {
+
+                DateTime modification = File.GetLastWriteTime(file);
+                int result = DateTime.Compare(timeAccess, modification);
+                if (result == -1)
+                {
+                    string[] fileEle = file.Split('\\');
+                    String fileName = fileEle[fileEle.Length - 1];
+                    fileChanged.Add(fileName);
+
+                }
+                //AppendText(result.ToString());
+                //textBox1.AppendText(Environment.NewLine);
+
+
+            }
+            int countFile = 0;
+            foreach (string fileName in fileChanged)
+            {
+                countFile += 1;
+            }
+            time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            cmd = "   Sao lưu " + countFile + " file";
+            textBox1.AppendText(time + cmd);
+            sendData(time, cmd);
+            textBox1.AppendText(Environment.NewLine);
+            string root = @"D:\cache";
+
+            
+
+            if (!Directory.Exists(root))
+            {
+
+                Directory.CreateDirectory(root);
+
+
+            }
+            else
+            {
+                System.IO.DirectoryInfo di = new DirectoryInfo(root);
+                foreach (FileInfo file in di.GetFiles())
+                {
+                    file.Delete();
+                }
+            }
+            foreach (string fileName in fileChanged)
+            {
+                string sourceFile = System.IO.Path.Combine(label7.Text, fileName);
+                string destFile = System.IO.Path.Combine(root, fileName);
+                System.IO.File.Copy(sourceFile, destFile, true);
+            }
+
+
+            timeAccess = DateTime.Now;
+            zipFile = dir2SaveOffline + "\\backup_" + sDay + "" + sMonth + "" + year + "_" + hour + "h" + minute + "m" + second + "s" + ".zip";
+            ZipFile.CreateFromDirectory(root, zipFile);
             lbLink.Text = zipA;
             tbLink.Text = zipA;
 
@@ -397,7 +523,7 @@ namespace Server
                     {
                         progress += len;
                         float progressMB = progress / (1024 * 1024);
-                        float sizeMB = size / (1024 * 1024);
+                        sizeMB = size / (1024 * 1024);
                         set2(size, progress);
                         set(progressMB.ToString("0.00") + " MB of " + sizeMB.ToString("0.00") + " MB");
                         stmWriter.Write(buff, 0, len);
@@ -410,9 +536,10 @@ namespace Server
 
                 set("Thời gian gửi: " + sendTime + "s");
 
-                textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss")+ "   Gửi thành công file: " + zipB + "\n");
+                textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")+ "   Gửi thành công file: " + zipB + "\n");
                 textBox1.AppendText(Environment.NewLine);
                 
+
 
             }
             catch (Exception ex)
@@ -433,6 +560,56 @@ namespace Server
             }
         }
 
+        public void sendToOneDriveFolder()
+        {
+            string lineOneDrive = label12.Text;
+            
+
+            string filepath = label12.Text + "\\log.txt";
+            FileStream fs = new FileStream(filepath, FileMode.Create);
+            StreamWriter sWriter = new StreamWriter(fs, Encoding.UTF8);
+            string[] folders = System.IO.Directory.GetFiles(dirOneDrive);
+            DayOfWeek dayweek = DateTime.Now.DayOfWeek;
+            int day = DateTime.Now.Day;
+            string sDay = day.ToString();
+            if (day < 10)
+            {
+                sDay = "0" + sDay;
+            }
+
+            int month = DateTime.Now.Month;
+            string sMonth = month.ToString();
+            if (month < 10)
+            {
+                sMonth = "0" + sMonth;
+            }
+
+            int year = DateTime.Now.Year;
+            int hour = DateTime.Now.Hour;
+            int minute = DateTime.Now.Minute;
+            int second = DateTime.Now.Second;
+            sWriter.WriteLine("THỜI GIAN BACKUP: " + dayweek + ", " + sDay + "/" + sMonth + "/" + year + "  " + hour + ":" + minute + ":" + second);
+            sWriter.WriteLine("Người dùng: " + Password.username);
+            int dem = 0;
+            foreach (string fileName in folders)
+            {
+                dem++;
+                sWriter.WriteLine(dem + "/ " + Path.GetFileName(fileName).Trim() + "\n");
+            }
+            sWriter.Flush();
+            fs.Close();
+            string zipA_path = "\\backup_" + sDay + "" + sMonth + "" + year + "_" + hour + "h" + minute + "m" + second + "s" + ".zip";
+            zipA = dir2SaveOneDrive + zipA_path;
+
+            ZipFile.CreateFromDirectory(dirOneDrive, zipA);
+            time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            cmd = "   Lưu trữ file " + zipA_path + " vào OneDrive thành công";
+            textBox1.AppendText(time + cmd);
+            sendData(time, cmd);
+            //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "   Kết nối với cổng " + comboBox1.Text + " thành công");
+            textBox1.AppendText(Environment.NewLine);
+
+        }
         private void Send_File_Type_A()
         {
             long sendTime = 0;    
@@ -448,7 +625,7 @@ namespace Server
                     NetworkStream ns1 = new NetworkStream(socketForClient);
                     StreamReader sr1 = new StreamReader(ns1);
                     StreamWriter sw1 = new StreamWriter(ns1);
-                    string filename = zipA;
+                    string filename = zipFile;
                     nwkStream = new NetworkStream(socketForClient);
                     stmReader = File.OpenRead(tbLink.Text);
                     stmWriter = nwkStream;
@@ -478,9 +655,13 @@ namespace Server
                 }
 
                 set("Thời gian gửi: " + sendTime + "s");
-                textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss")+ "   Gửi thành công file: " + zipA + "\n");
+                time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                cmd = "   Gửi thành công file: " + zipA;
+                textBox1.AppendText(time + cmd);
+                sendData(time, cmd);
+                //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")+ "   Gửi thành công file: " + zipA);
                 textBox1.AppendText(Environment.NewLine);
-                
+               
 
             }
             catch (Exception ex)
@@ -506,16 +687,28 @@ namespace Server
             if (!serialPort1.IsOpen)
             {
                 backuped = false;
-                serialPort1.PortName = comboBox1.Text;
-                serialPort1.BaudRate = 9600;
-                serialPort1.Parity = Parity.None;
-                serialPort1.StopBits = StopBits.One;
-                serialPort1.DataBits = 8;
-                serialPort1.Handshake = Handshake.None;
-                serialPort1.ParityReplace = 0;
-                serialPort1.Open();
-                textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + "   Kết nối với cổng " + comboBox1.Text+ " thành công");
-                textBox1.AppendText(Environment.NewLine);
+                if(comboBox1.Text == "")
+                {
+                    MessageBox.Show("Vui lòng chọn cổng COM!!!");
+                }
+                else
+                {
+                    serialPort1.PortName = comboBox1.Text;
+                    serialPort1.BaudRate = 9600;
+                    serialPort1.Parity = Parity.None;
+                    serialPort1.StopBits = StopBits.One;
+                    serialPort1.DataBits = 8;
+                    serialPort1.Handshake = Handshake.None;
+                    serialPort1.ParityReplace = 0;
+                    serialPort1.Open();
+                    time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                    cmd = "   Kết nối với cổng " + comboBox1.Text + " thành công";
+                    textBox1.AppendText(time + cmd);
+                    sendData(time, cmd);
+                    //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "   Kết nối với cổng " + comboBox1.Text + " thành công");
+                    textBox1.AppendText(Environment.NewLine);
+                }
+                timer4.Enabled = false;
             }
             
         }
@@ -536,9 +729,14 @@ namespace Server
             {
                 
                 label4.Text = "Client đã kết nối";
+                clientConnect = true;
                 if (!clientConnDisplay)
                 {
-                    textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + "    Client kết nối thành công");
+                    time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                    cmd = "    Client kết nối thành công";
+                    textBox1.AppendText(time + cmd);
+                    sendData(time, cmd);
+                    //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "    Client kết nối thành công");
                     textBox1.AppendText(Environment.NewLine);
                 }
                 
@@ -552,7 +750,11 @@ namespace Server
                 label4.Text = "Client chưa kết nối";
                 if (clientConnDisplay)
                 {
-                    textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + "    Client ngắt kết nối");
+                    time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                    cmd = "    Client ngắt kết nối";
+                    textBox1.AppendText(time + cmd);
+                    sendData(time, cmd);
+                    //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "    Client ngắt kết nối");
                     textBox1.AppendText(Environment.NewLine);
                 }
                 clientConnDisplay = false;
@@ -584,7 +786,7 @@ namespace Server
         }
         private void timer2_Tick(object sender, EventArgs e)
         {
-            if ((label7.Text.Equals("Choose backup file"))  )
+            if ((label7.Text.Equals("Chọn thư mục sao lưu"))  )
             {
                 MessageBox.Show("Chưa chọn thư mục. Vui lòng chọn thư mục", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -592,6 +794,13 @@ namespace Server
             {
                 try
                 {
+                    time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                    cmd = "   Thực hiện backup theo chu kỳ";
+                    textBox1.AppendText(time + cmd);
+                    sendData(time, cmd);
+
+                    //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "");
+                    textBox1.AppendText(Environment.NewLine);
                     Main_Process();
                     AutoCount++;
                     label3.Text = "Backup " + AutoCount + " times";
@@ -607,23 +816,32 @@ namespace Server
             
             Thread.Sleep(1000);
             inputData = serialPort1.ReadExisting();
-            //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + "   " + inputData + "  " + inputData.LastIndexOf('#'));
+            //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "   " + inputData + "  " + inputData.LastIndexOf('#'));
             //textBox1.AppendText(Environment.NewLine);
             
             if (inputData.LastIndexOf("*") == 0 && inputData.LastIndexOf('#') > 0)
             {
-                textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + "   Có dữ liệu điều khiển");
+                time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                cmd = "   Có dữ liệu điều khiển";
+                textBox1.AppendText(time + cmd);
+                sendData(time, cmd);
+
+                //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "");
                 textBox1.AppendText(Environment.NewLine);
-                //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + "   "+inputData);
+                //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "   "+inputData);
                 //textBox1.AppendText(Environment.NewLine);
                 String command = inputData.Substring(1, inputData.Length-2);
                 
                 string[] commandList = command.Split(';');
-                //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + "   " + commandList[0]);
+                //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "   " + commandList[0]);
 
                 if (commandList[0] == "1" & backuped == false)
                 {
-                    textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + "   Có nguy cơ cháy. Thực hiện backup!!!!");
+                    time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                    cmd = "   Có nguy cơ cháy. Thực hiện backup!!!!";
+                    textBox1.AppendText(time + cmd);
+                    sendData(time, cmd);
+                    //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "");
                     textBox1.AppendText(Environment.NewLine);
                     try
                     {
@@ -641,7 +859,7 @@ namespace Server
                     }
 
                 }
-                label13.Text = "Admin's phone: " + commandList[3];
+                label13.Text = "SĐT liên lạc: " + commandList[3];
                 if(commandList[1] == "30" && radioButton1.Checked == false)
                 {
                     radioButton1.Checked = true;
@@ -688,19 +906,25 @@ namespace Server
                     {
                         if (day2Save == 0)
                         {
-                            textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + "   Hủy tự động xóa dữ liệu");
+                            time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                            cmd = "   Hủy tự động xóa dữ liệu";
+                            textBox1.AppendText(time + cmd);
+                            sendData(time, cmd);
+                            //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "   Hủy tự động xóa dữ liệu");
                             textBox1.AppendText(Environment.NewLine);
                         }
                         else
                         {
-                            textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + "   Tự động xóa dữ liệu sau " + day2Save + " ngày");
+                            time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                            cmd = "   Tự động xóa dữ liệu sau " + day2Save + " ngày";
+                            textBox1.AppendText(time + cmd);
+                            sendData(time, cmd);
+                            //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "   Tự động xóa dữ liệu sau " + day2Save + " ngày");
                             textBox1.AppendText(Environment.NewLine);
                         }
                     }
                 }
-            {
-
-            }
+           
                 
                 
             }
@@ -777,7 +1001,12 @@ namespace Server
 
         private void btn3_Click(object sender, EventArgs e)
         {
-            textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + "   Thực hiện backup ngay lập tức");
+            time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            cmd = "   Thực hiện backup ngay lập tức";
+            textBox1.AppendText(time + cmd);
+            sendData(time, cmd);
+
+            //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "   Thực hiện backup ngay lập tức");
             textBox1.AppendText(Environment.NewLine);
             Thread main = new Thread(new ThreadStart(Main_Process));
             main.Priority = ThreadPriority.Highest;
@@ -855,10 +1084,20 @@ namespace Server
             if (path.ShowDialog() == DialogResult.OK)
             {
                 label12.Text = path.SelectedPath;
-                dir = label12.Text;
+                dirOneDrive = label12.Text;
             }
-            textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + "   Chọn <" + label12.Text + "> làm thư mục lưu trữ");
+
+            time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            cmd = "   Chọn <" + label12.Text + "> làm thư mục đồng bộ OneDrive";
+            textBox1.AppendText(time + cmd);
+            //sendData(time, cmd);
+
+            //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "   Chọn <" + label12.Text + "> làm thư mục lưu trữ");
             textBox1.AppendText(Environment.NewLine);
+            button7.Visible = true;
+            button6.Visible = false;
+            label12.Visible = false;
+            label15.Visible = true;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -876,7 +1115,350 @@ namespace Server
 
         }
 
-        
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void sssssToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ghiFileTheoDõiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string filePath = "D:\\";
+            string fileName = "log_" + DateTime.Now.ToString("dd_MM_yyyy_hh_mm_ss") + ".txt";
+            string fullName = filePath + fileName;
+            File.WriteAllText(fullName, textBox1.Text);
+            MessageBox.Show("Ghi thành công file " + fullName);
+        }
+
+        private void sửDựngMặcĐịnhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = "0C9D9256AC52";
+            label12.Text = "";
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hướngDẫnSửDụngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("B1: CHọn file cần backup ở mục <Chọn file>\nB2: Chọn thư mục đồng bộ với OneDrive ở <OneDrive>" +
+                "\nB3:Nhập địa chỉ MAC của server phụ\nB4:Nhấn bắt đầu và điền tên đăng nhập + mật khẩu" +
+                "\nB5:Chờ máy chủ phụ kết nối\nB6:Thay đổi chu kỳ backup nếu cần" +
+                "\nB7:Chọn cổng COM và baudrate để kết nối với hệ thống cảm biến" +
+                "\n:<Lưu ý: Có thể nhấn BackUp để backup bằng tay>");
+        }
+
+        private void liênHệToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Đề tài: Ứng dụng IOT trong backup dữ liệu cho các phòng máy server" +
+                            "\nGiáo viên hướng dẫn: Ngô Minh Trí" +
+                            "\n                                      Vũ Vân Thanh" +
+                            "\nSinh viên thực hiện: Nguyễn Văn Nhật Quang");
+        }
+
+        private void aboutMeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Tên: Nguyễn Văn Nhật Quang\nLớp: 14DT2 Điện tử - viễn thông\nE-mail:nhatquang.nv14@gmail.com\nSĐT:0976742314\nFB:<Đường Hạo> facebook.com/smstarfall");
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nộiDungĐềTàiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Xây dựng hệ thống ứng dụng IOT để backup dữ liệu. Hệ thống IOT được xây dựng để người dùng theo dõi các thông số trong phòng máy đồng thời có thể phát " +
+                "hiện và cảnh báo cháy trong trường hợp khẩn cấp. Phần mềm thực hiện việc backup dữ liệu theo chu kỳ và đồng bộ với onedrive, trong trường hợp có cháy hoặc các trường hợp khẩn cấp " +
+                "hệ thống sẽ tự động thực hiện công việc backup để tránh các rủi ro với dữ liệu. Ngoài ra người dùng có thể điều khiển phần mềm từ xa qua website");
+        }
+
+        private void đếnTrangĐiềuKhiểnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://vvtsmart.com/backup");
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void appTheoDõiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Minitoring_App ma = new Minitoring_App();
+            ma.Show(this);
+        }
+
+        private void theoDõiServerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ServerManager sm = new ServerManager();
+            sm.Show(this);
+        }
+
+        private void timer4_Tick(object sender, EventArgs e)
+        {
+            comboBox1.DataSource = SerialPort.GetPortNames();
+        }
+
+        private void button5_Click_2(object sender, EventArgs e)
+        {
+            FolderBrowserDialog path = new FolderBrowserDialog();
+            path.ShowNewFolderButton = false;
+            path.Description = "Mời chọn thư mục để lưu trữ";
+            if (path.ShowDialog() == DialogResult.OK)
+            {
+                label14.Text = path.SelectedPath;
+                dir2SaveOffline = label14.Text;
+            }
+            time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            cmd = "   Chọn <" + label14.Text + "> làm địa chỉ lưu trữ";
+            textBox1.AppendText(time + cmd);
+            //sendData(time, cmd);
+            //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "   Chọn <" + label7.Text + "> làm thư mục chính");
+            textBox1.AppendText(Environment.NewLine);
+            button4.Visible = true;
+            button5.Visible = false;
+            label14.Visible = false;
+            label7.Visible = true;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog path = new FolderBrowserDialog();
+            path.ShowNewFolderButton = false;
+            path.Description = "Mời chọn thư mục lưu trữ OneDrive";
+            if (path.ShowDialog() == DialogResult.OK)
+            {
+                label15.Text = path.SelectedPath;
+                dir2SaveOneDrive = label15.Text;
+            }
+
+            time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            cmd = "   Chọn <" + label15.Text + "> làm thư mục lưu trữ OneDrive";
+            textBox1.AppendText(time + cmd);
+            //sendData(time, cmd);
+
+            //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "   Chọn <" + label12.Text + "> làm thư mục lưu trữ");
+            textBox1.AppendText(Environment.NewLine);
+            button6.Visible = true;
+            button7.Visible = false;
+            label15.Visible = false;
+            label12.Visible = true;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            string line_A = label12.Text;
+
+
+            string filepath = label12.Text + "\\log.txt";
+            FileStream fs = new FileStream(filepath, FileMode.Create);
+            StreamWriter sWriter = new StreamWriter(fs, Encoding.UTF8);
+            string[] folder = System.IO.Directory.GetFiles(dirOneDrive);
+            DayOfWeek dayweek = DateTime.Now.DayOfWeek;
+            int day = DateTime.Now.Day;
+            string sDay = day.ToString();
+            if (day < 10)
+            {
+                sDay = "0" + sDay;
+            }
+
+            int month = DateTime.Now.Month;
+            string sMonth = month.ToString();
+            if (month < 10)
+            {
+                sMonth = "0" + sMonth;
+            }
+
+            int year = DateTime.Now.Year;
+            int hour = DateTime.Now.Hour;
+            int minute = DateTime.Now.Minute;
+            int second = DateTime.Now.Second;
+            sWriter.WriteLine("THỜI GIAN BACKUP: " + dayweek + ", " + sDay + "/" + sMonth + "/" + year + "  " + hour + ":" + minute + ":" + second);
+            sWriter.WriteLine("Người dùng: " + Password.username);
+            int dem = 0;
+            foreach (string fileName in folder)
+            {
+                dem++;
+                sWriter.WriteLine(dem + "/ " + Path.GetFileName(fileName).Trim() + "\n");
+            }
+            sWriter.Flush();
+            fs.Close();
+            string zipA_path = "\\backup_" + sDay + "" + sMonth + "" + year + "_" + hour + "h" + minute + "m" + second + "s" + ".zip";
+            zipA = dir2SaveOneDrive + zipA_path;
+
+            ZipFile.CreateFromDirectory(dirOneDrive, zipA);
+            time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            cmd = "   Lưu trữ file " + zipA_path + " vào OneDrive thành công";
+            textBox1.AppendText(time + cmd);
+            sendData(time, cmd);
+            //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "   Kết nối với cổng " + comboBox1.Text + " thành công");
+            textBox1.AppendText(Environment.NewLine);
+
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            timer5.Enabled = true;
+        }
+
+        private void timer5_Tick(object sender, EventArgs e)
+        {
+
+            if (countFailRequest < 5)
+            {
+                try
+                {
+                    string link = "http://vvtsmart.com/backup/updateData.php";
+                    WebClient client = new WebClient();
+                    String downloadedString = client.DownloadString(link);
+                    if (!downloadedString.Equals(commandFromUser))
+                    {
+                        commandFromUser = downloadedString;
+                        excecuteChange(commandFromUser);
+                        textBox1.AppendText("Nhận được dữ liệu điều khiển mới");
+                        textBox1.AppendText(Environment.NewLine);
+                    }
+                    countFailRequest = 0;
+                }
+                catch
+                {
+                    countFailRequest += 1;
+                }
+            }
+            else
+            {
+                textBox1.AppendText("Kiểm tra kết nối Internet");
+                textBox1.AppendText(Environment.NewLine);
+                countFailRequest = 0;
+            }
+        }
+
+        private void excecuteChange(string inputData)
+        {
+            if (clientConnect)
+            {
+                if (inputData.LastIndexOf("*") == 0 && inputData.LastIndexOf('#') > 0)
+                {
+
+                    //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "");
+
+                    //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "   "+inputData);
+                    //textBox1.AppendText(Environment.NewLine);
+                    String command = inputData.Substring(1, inputData.Length - 2);
+
+                    string[] commandList = command.Split(';');
+                    //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "   " + commandList[0]);
+
+                    if (commandList[0] == "1" & backuped == false)
+                    {
+                        time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                        cmd = "   Có nguy cơ cháy. Thực hiện backup!!!!";
+                        textBox1.AppendText(time + cmd);
+                        sendData(time, cmd);
+                        //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "");
+                        textBox1.AppendText(Environment.NewLine);
+                        try
+                        {
+                            SetText("Gửi ");
+
+                            Thread main = new Thread(new ThreadStart(Main_Process));
+                            main.Priority = ThreadPriority.Highest;
+                            main.Start();
+                            AutoCount++;
+                        }
+                        finally
+                        {
+                            serialPort1.Close();
+                            Close();
+                        }
+
+                    }
+                    label13.Text = "SĐT liên lạc: " + commandList[3];
+                    if (commandList[1] == "30" && radioButton1.Checked == false)
+                    {
+                        radioButton1.Checked = true;
+                    }
+                    else
+                    {
+                        if (commandList[1] == "60" && radioButton2.Checked == false)
+                        {
+                            radioButton2.Checked = true;
+                        }
+                        else
+                        {
+                            if (commandList[1] == "120" && radioButton3.Checked == false)
+                            {
+                                radioButton3.Checked = true;
+                            }
+                        }
+                    }
+                    try
+                    {
+                        if (commandList[2] != day2Save.ToString())
+                        {
+                            day2savechange = true;
+                            if (commandList[2] == "0")
+                            {
+                                day2Save = 0;
+                            }
+                            if (commandList[2] == "3")
+                            {
+                                day2Save = 3;
+                            }
+                            if (commandList[2] == "5")
+                            {
+                                day2Save = 5;
+                            }
+                        }
+                        else
+                        {
+                            day2savechange = false;
+                        }
+                    }
+                    finally
+                    {
+                        if (day2savechange)
+                        {
+                            if (day2Save == 0)
+                            {
+                                time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                                cmd = "   Hủy tự động xóa dữ liệu";
+                                textBox1.AppendText(time + cmd);
+                                sendData(time, cmd);
+                                //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "   Hủy tự động xóa dữ liệu");
+                                textBox1.AppendText(Environment.NewLine);
+                            }
+                            else
+                            {
+                                time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                                cmd = "   Tự động xóa dữ liệu sau " + day2Save + " ngày";
+                                textBox1.AppendText(time + cmd);
+                                sendData(time, cmd);
+                                //textBox1.AppendText(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "   Tự động xóa dữ liệu sau " + day2Save + " ngày");
+                                textBox1.AppendText(Environment.NewLine);
+                            }
+                        }
+                    }
+
+
+
+                }
+            }
+            else
+            {
+                commandFromUser = "";
+                textBox1.AppendText("Thay đổi thông tin thất bại!! Kiểm tra kết nối đến client");
+                textBox1.AppendText(Environment.NewLine);
+            }
+        }
 
         private void button5_Click(object sender, EventArgs e)
         {

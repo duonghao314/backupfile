@@ -128,3 +128,7 @@ C:\Users\USER\Desktop\BackUpFile _Final\Server\obj\Debug\RunServer.csproj.CoreCo
 C:\Users\USER\Desktop\BackUpFile _Final\Server\obj\Debug\Server.exe
 C:\Users\USER\Desktop\BackUpFile _Final\Server\obj\Debug\Server.pdb
 C:\Users\USER\Desktop\BackUpFile _Final\Server\obj\Debug\RunServer.csprojAssemblyReference.cache
+C:\Users\USER\Desktop\BackUpFile _Final\Server\obj\Debug\Server.Minitoring_App.resources
+C:\Users\USER\Desktop\BackUpFile _Final\Server\obj\Debug\Server.ServerManager.resources
+C:\Users\USER\Desktop\BackUpFile _Final\Server\bin\Debug\OpenHardwareMonitorLib.dll
+C:\Users\USER\Desktop\BackUpFile _Final\Server\obj\Debug\RunServer.csproj.CopyComplete
